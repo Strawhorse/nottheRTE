@@ -1,0 +1,7 @@
+{
+  "name": "nottheRTE",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
