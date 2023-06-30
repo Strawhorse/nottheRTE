@@ -13,5 +13,24 @@
       <ion-title size="large">{{ folder | titlecase }}</ion-title>
     </ion-toolbar>
   </ion-header>
-  <app-news-card></app-news-card>
+  
+  <!-- now create a list of newscards here  -->
+  <div id="container">
+
+    <!-- Show news or show a progress bar instead -->
+    <ion-spinner *ngIf="!newsList"></ion-spinner>
+  </div>
+  
+  <!-- Or if there is news we can display it -->
+  <div *ngIf="newsList">
+
+    <!-- use the ngFor loop for news of newsList -->
+    <div *ngFor="let news of newsList">
+
+      <!-- takes news from the newscard component -->
+      <app-news-card [news]="news"></app-news-card>
+    </div>
+
+  </div>
+
 </ion-content>

@@ -12,6 +12,8 @@ import { ArticlesEntity } from '../interfaces/news-response';
 
 export class FolderPage implements OnInit {
   public folder!: string;
+
+  // this parameter is from the interfaces created earlier for each news article
   newsList?: ArticlesEntity[];
   
   constructor(
@@ -22,6 +24,10 @@ export class FolderPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
+
+    // now call the below function to initiate getting the news stories
+    this.getTopHeadlines();
+
   }
 
   // function to add the news service

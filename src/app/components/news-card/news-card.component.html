@@ -1,11 +1,17 @@
-<ion-card>
-  <img alt="Silhouette of mountains" src="https://picsum.photos/800/500" />
+<!-- THis is a news card with the html content to be displayed -->
+<!-- We are now populating each news card with the information from the news item ArticleEntity -->
+<!--  Using ngIfs to check if there are images included -->
+
+<ion-card href="{{ news?.url }}" target="_blank" rel="noopener noreferrer">
+  <ion-img *ngIf="news?.urlToImage" src="{{ news?.urlToImage }}"></ion-img>
   <ion-card-header>
-    <ion-card-title>Card Title</ion-card-title>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    
+    <ion-card-subtitle>{{ news?.source?.name }}</ion-card-subtitle>
+    <ion-card-title>{{ news?.title }}</ion-card-title>
+    
   </ion-card-header>
 
   <ion-card-content>
-    Here's a small text description for the card content. Nothing more, nothing less.
+    {{ news?.description}}
   </ion-card-content>
 </ion-card>
